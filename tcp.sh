@@ -3,20 +3,20 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
 #=================================================
-#	               Warning                                                                        #
-#  Anyone who uses this script in illegal ways                                             #  
-#  has nothing to do with me and I am not liable                                       #
-#  for any major legal responsibility.                                                           # 
-#	BBR+BBR MAGIC+BBRPLUS+LOTSERVER                                     #
+#	               Warning                   #
+#  Anyone who uses this script in illegal ways   #                                           
+#  has nothing to do with me and I am not liable #                                      
+#  for any major legal responsibility.           #                                                
+#	BBR+BBR MAGIC+BBRPLUS+LOTSERVER          #                           
 #=================================================
 
 sh_ver="1.1.9"
 github="github.com/LuisLIn666/Linux-NetSpeed/raw/master"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
-Info="${Green_font_prefix}[信息]${Font_color_suffix}"
-Error="${Red_font_prefix}[错误]${Font_color_suffix}"
-Tip="${Green_font_prefix}[注意]${Font_color_suffix}"
+Info="${Green_font_prefix}[message]${Font_color_suffix}"
+Error="${Red_font_prefix}[error]${Font_color_suffix}"
+Tip="${Green_font_prefix}[Be careful]${Font_color_suffix}"
 
 #安装BBR内核
 installbbr(){
@@ -312,7 +312,7 @@ net.ipv4.ip_forward = 1">>/etc/sysctl.conf
 	read -p "After the VPS needs to be restarted, the system optimization configuration can be effective. Is it restarted now?[Y/n] :" yn
 	[ -z "${yn}" ] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-		echo -e "${Info} VPS 重启中..."
+		echo -e "${Info} VPS Restarting..."
 		reboot
 	fi
 }
@@ -320,7 +320,7 @@ net.ipv4.ip_forward = 1">>/etc/sysctl.conf
 Update_Shell(){
 	echo -e "The current version is [ ${sh_ver} ]，Start detecting the latest version..."
 	sh_new_ver=$(wget --no-check-certificate -qO- "http://${github}/tcp.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1)
-	[[ -z ${sh_new_ver} ]] && echo -e "${Error} 检测最新版本失败 !" && start_menu
+	[[ -z ${sh_new_ver} ]] && echo -e "${Error} Fail to detect the  laest version !" && start_menu
 	if [[ ${sh_new_ver} != ${sh_ver} ]]; then
 		echo -e "Find new version[ ${sh_new_ver} ]，Whether to update？[Y/n]"
 		read -p "(default: y):" yn
@@ -354,7 +354,7 @@ echo && echo -e " TCP Accelerates One-Click Installation Management Script ${Red
  ${Green_font_prefix}7.${Font_color_suffix} Use BBRplus
  ${Green_font_prefix}8.${Font_color_suffix} Use Lotserver
 ————————————Other Management————————————
- ${Green_font_prefix}9.${Font_color_suffix} Uninstall all Accelerate
+ ${Green_font_prefix}9.${Font_color_suffix}  Uninstall all Accelerate
  ${Green_font_prefix}10.${Font_color_suffix} System Configuration Optimization
  ${Green_font_prefix}11.${Font_color_suffix} Exit
 ————————————————————————————————" && echo
