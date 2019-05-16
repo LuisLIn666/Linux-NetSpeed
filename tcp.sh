@@ -350,7 +350,7 @@ echo && echo -e " TCP Accelerates One-Click Installation Management Script ${Red
 ————————————Accelerates Management————————————
  ${Green_font_prefix}4.${Font_color_suffix} Use BBR
  ${Green_font_prefix}5.${Font_color_suffix} Use BBR Magic
- ${Green_font_prefix}6.${Font_color_suffix} Use  Violence BBRMagic 
+ ${Green_font_prefix}6.${Font_color_suffix} Use Violence BBRMagic 
  ${Green_font_prefix}7.${Font_color_suffix} Use BBRplus
  ${Green_font_prefix}8.${Font_color_suffix} Use Lotserver
 ————————————Other Management————————————
